@@ -10,24 +10,35 @@ monitor runner. Check for specified urls and alert when somthing fail
 # python imports 
 import sys
 import logging
-from urllib2 import urlopen
+import time
 
 # internal imports
-from conf import Configuration
+from monitor import Monitor
 
-def run(conf_file):
-    conf = Configuration()
-    urls_to_check = conf.urls_to_check()
-    for url, expected_code in urls_to_check:
-        ret_code = urlopen(url).getcode() 
-        if ret_code != expected_code:
-            logging.info("check %s FAILED! code %d" % (url, code))
-            logging.info("sending alert")
+DEFAULT_TIMEOUT = 20
+DEFAULT_INTERVAL = 120
 
+def main():
+    from conf import settings
 
+    logging.basicConfig(level=logging.DEBUG,
+                        format='%(asctime)s %(levelname)s %(message)s',
+                        stream=sys.stdout);
+
+    timeout = getattr(settings, 'TIMEOUT', DEFAULT_TIMEOUT)
+    check_time = getattr(settings, 'CHECK_INTERVAL', DEFAULT_INTERVAL)
+
+    monitor = Monitor(settings.ALERT_BACKENDS, timeout)
+
+    try: 
+        while True:
+            monitor.check(settings.URLS_TO_CHECK)
+            time.sleep(check_time)
+    except KeyboardInterrupt:
+        pass
+    except Exception, e:
+        logging.error(e)
 
 if __name__ == '__main__':
-    if len(sys.argv) >= 2:
-        run(sys.argv[1])
-    
+    main()
 
