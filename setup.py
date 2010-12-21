@@ -6,6 +6,6 @@ setup(name='pony_monitor',
       description = 'monitor a url for a response code',
       version='0.1',
       scripts=['ponymonitor.py'],
-      packages=['pony_monitor'],
+      packages=['pony_monitor','pony_monitor.backend'],
       requires = ['importlib']
 )

@@ -11,7 +11,5 @@ sys.path.append(os.getcwd())
 
 os.environ['PONY_SETTINS_MODULE'] = 'settings'
 
-print os.getcwd()
-
 if __name__ == '__main__':
     main()
