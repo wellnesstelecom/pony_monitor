@@ -6,11 +6,19 @@
 """
 """
 
+import os
 import logging
 import importlib
 
 
-SETTINGS_MODULE= 'settings'
+
+try:
+    SETTINGS_MODULE = os.environ['PONY_SETTINS_MODULE']
+except:
+    raise Exception, "you need to have settings.py file"
+
+
+#SETTINGS_MODULE= 'settings'
 
 # ripped from django code
 try:
