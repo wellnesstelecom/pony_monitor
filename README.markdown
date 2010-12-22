@@ -2,13 +2,15 @@
 
 Intro
 -----
-pony-monitor is an small tool to monitor http server. Fetch specified urls and check that return code is valid.
+pony-monitor is an small tool to monitor http server. Fetch specified urls and check that return code is valid and warns to specified email when fails.
 
 Quick start
 -----------
 
 
 *installing*
+
+Download code:
 
     $ python setup.py install
 
@@ -29,11 +31,10 @@ pony-monitor uses the same configuration filosofy that django, uses a settings.p
     TIMEOUT = 20
 
     # secs
-    # test
     CHECK_INTERVAL = 20
 
     # backend.console.ConsoleAlert is alse available
-    # you can create you own backends
+    # you can create you own backends, look inside pony_monitor.backend package
     ALERT_BACKENDS = ('backend.mail.MailAlert',)
 
 
@@ -51,7 +52,14 @@ pony-monitor uses the same configuration filosofy that django, uses a settings.p
 
 *usage*
 
+    $ vim settings.py
     $ ponymonitor.py
+
+*production usage*
+
+In production enviorment a tool like supervisord is recommended although you can use nohup:
+
+    $ nohup ponymonitor &
 
 
 
