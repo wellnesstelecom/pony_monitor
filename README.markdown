@@ -14,6 +14,10 @@ Download code:
 
     $ python setup.py install
 
+You have to install importlib:
+
+    $ sudo pip install importlib
+
 **configuration**
 
 pony-monitor uses the same configuration filosofy that django, uses a settings.py file, so create a settings.py file on a folder:
