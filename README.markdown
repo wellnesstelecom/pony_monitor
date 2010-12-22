@@ -59,7 +59,7 @@ pony-monitor uses the same configuration filosofy that django, uses a settings.p
 
 In production enviorment a tool like supervisord is recommended although you can use nohup:
 
-    $ nohup ponymonitor &
+    $ nohup ponymonitor.py &
 
 
 
