@@ -21,7 +21,7 @@ DEFAULT_INTERVAL = 120
 def main():
     from conf import settings
 
-    logging.basicConfig(level=logging.DEBUG,
+    logging.basicConfig(level=logging.INFO,
                         format='%(asctime)s %(levelname)s %(message)s',
                         stream=sys.stdout);
 
