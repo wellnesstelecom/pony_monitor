@@ -2,7 +2,7 @@
 
 Intro
 -----
-pony-monitor is an small tool to monitor http server. Fetch specified urls and check that return code is valid and warns to specified email when fails.
+pony-monitor is a small tool to monitor a http server. It fetches the specified urls, checks that a valid code is returned and warns to specified email when it fails.
 
 Quick start
 -----------
@@ -20,7 +20,7 @@ You have to install importlib:
 
 **configuration**
 
-pony-monitor uses the same configuration filosofy that django, uses a settings.py file, so create a settings.py file on a folder:
+pony-monitor uses the same configuration philosophy as django, it uses a settings.py file, so you have to create a settings.py file on a folder:
 
     #settings.py
 
@@ -61,7 +61,7 @@ pony-monitor uses the same configuration filosofy that django, uses a settings.p
 
 **production usage**
 
-In production enviorment a tool like supervisord is recommended although you can use nohup:
+In production environment a tool like supervisord is recommended although you can use nohup:
 
     $ nohup ponymonitor.py &
 
