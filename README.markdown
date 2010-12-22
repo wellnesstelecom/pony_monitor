@@ -8,13 +8,13 @@ Quick start
 -----------
 
 
-*installing*
+**installing**
 
 Download code:
 
     $ python setup.py install
 
-*configuration*
+**configuration**
 
 pony-monitor uses the same configuration filosofy that django, uses a settings.py file, so create a settings.py file on a folder:
 
@@ -50,12 +50,12 @@ pony-monitor uses the same configuration filosofy that django, uses a settings.p
     RECIPIENTS = ['YOU@mail.com', 'johnrambot@mail.com']
 
 
-*usage*
+**usage**
 
     $ vim settings.py
     $ ponymonitor.py
 
-*production usage*
+**production usage**
 
 In production enviorment a tool like supervisord is recommended although you can use nohup:
 
