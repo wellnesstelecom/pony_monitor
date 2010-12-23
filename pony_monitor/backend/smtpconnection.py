@@ -6,6 +6,7 @@
 # code ripped from django code, see django/core/mail.py
 # only modified to remove message class depenency
 
+import logging
 import smtplib
 from email.mime.text import MIMEText
 

@@ -21,7 +21,7 @@ class MailAlert(object):
             s.open()
         except Exception, e:
             logging.error(e)
-            logger.error("can't open connection")
+            logging.error("can't open connection")
         pre_subject = getattr(settings, "SUBJECT_PREFIX", 'pony_monitor - ')
         s.send(settings.RECIPIENTS, settings.EMAIL_HOST_USER, pre_subject + subject, msg)
         s.close()
