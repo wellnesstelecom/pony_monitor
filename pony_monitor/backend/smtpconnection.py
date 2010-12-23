@@ -72,7 +72,7 @@ class SMTPConnection(object):
 
         msg['Subject'] = subject
         msg['From'] = from_email
-        msg['To'] = '.'.join(recipients)
+        msg['To'] = ','.join(recipients)
 
         try:
             self.connection.sendmail(from_email, recipients, msg.as_string())
